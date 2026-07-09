@@ -1,0 +1,353 @@
+
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multirepuestos McQueen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+.header{
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* LOGO */
+
+.logo{
+    font-size:32px;
+    font-weight:700;
+    color:white;
+}
+
+.logo span{
+    color:#ffd700;
+    text-shadow:0 0 12px rgba(255,215,0,0.7);
+}
+
+/* MENU */
+
+.menu-toggle{
+    display:none;
+    font-size:34px;
+    cursor:pointer;
+    color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:18px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+    position:relative;
+}
+
+.navbar a::after{
+    content:"";
+    width:0%;
+    height:3px;
+    background:#ffd700;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:0.3s;
+}
+
+.navbar a:hover::after{
+    width:100%;
+}
+
+.navbar a:hover{
+    color:#ffd700;
+}
+
+/* HERO */
+
+.hero{
+    background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('./img/rayo.webp') center/cover;
+    height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content{
+    animation:fade 1.2s ease;
+}
+
+.hero h1{
+    font-size:34px;
+    margin-bottom:20px;
+    color:white;
+    text-shadow:0 0 12px rgba(255,255,255,0.4);
+}
+
+/* PRODUCTOS */
+
+.productos{
+    padding:60px 30px;
+    text-align:center;
+}
+
+.productos h2{
+    font-size:42px;
+    margin-bottom:40px;
+    color:#ffd700;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+/* TARJETAS */
+
+.producto{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:22px;
+    overflow:hidden;
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.producto img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.info{
+    padding:20px;
+}
+
+.info h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.info p{
+    color:#ffd700;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* PAGOS */
+
+.pagos{
+    text-align:center;
+    padding:40px 20px;
+    font-size:28px;
+    color:#ffd700;
+    text-shadow:0 0 12px rgba(255,215,0,0.4);
+}
+
+/* FOOTER */
+
+footer{
+    background:rgba(0,0,0,0.5);
+    text-align:center;
+    padding:20px;
+    color:#ccc;
+    margin-top:30px;
+}
+
+/* ANIMACION */
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.menu-toggle{
+    display:block;
+}
+
+.navbar{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+}
+
+.navbar.show{
+    display:flex;
+}
+
+.hero{
+    height:420px;
+}
+
+.hero h1{
+    font-size:28px;
+}
+
+.productos h2{
+    font-size:32px;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<div class="logo">Multi<span>Repuestos</span> McQueen</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<div class="navbar" id="menu">
+
+<a href="index.html">Inicio</a>
+<a href="productos.html">Repuestos</a>
+<a href="accesorios.html">Accesorios</a>
+<a href="contacto.html">Contacto</a>
+<a href="registrarse.html">Registrarse</a>
+<a href="informacion.html">Información</a>
+
+</div>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="hero-content">
+
+<h1>🚗 MultiRepuestos McQueen 🚗</h1>
+
+</div>
+
+</div>
+
+<!-- PRODUCTOS -->
+
+<div class="productos">
+
+<h2>🔥 Productos Destacados 🔥</h2>
+
+<div class="grid">
+
+<div class="producto">
+<img src="img/freno de tambor.webp">
+<div class="info">
+<h3>Frenos</h3>
+<p>Q500</p>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/bateria.webp">
+<div class="info">
+<h3>Batería</h3>
+<p>Q600</p>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/llantas.webp">
+<div class="info">
+<h3>Llantas</h3>
+<p>Q400</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGOS -->
+
+<div class="pagos">
+
+Aceptamos tarjetas, transferencias y efectivo 💳💵
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Multirepuestos McQueen Calidad y potencia automotriz 🔥
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Información - Multirepuestos McQueen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#ffd700;
+    letter-spacing:2px;
+    text-shadow:0 0 10px rgba(255,215,0,0.7);
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    position:relative;
+    transition:.3s;
+}
+
+.menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:3px;
+    background:#ffd700;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#ffd700;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+/* MENU HAMBURGUESA */
+
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    color:white;
+    cursor:pointer;
+}
+
+/* CONTENIDO */
+
+.container{
+    max-width:1000px;
+    margin:50px auto;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:40px;
+    color:#ffd700;
+    text-shadow:0 0 15px rgba(255,215,0,0.5);
+}
+
+.section{
+    margin-bottom:35px;
+    transition:.3s;
+}
+
+.section:hover{
+    transform:translateX(10px);
+}
+
+h2{
+    color:#ffd700;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+p,
+.lista{
+    line-height:1.8;
+    font-size:18px;
+    color:#e6e6e6;
+}
+
+.lista{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+.lista li{
+    margin-bottom:8px;
+}
+
+/* FOOTER */
+
+footer{
+    background:rgba(0,0,0,0.5);
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    color:#ccc;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.menu{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    text-align:center;
+    margin-top:15px;
+    gap:15px;
+}
+
+.menu.active{
+    display:flex;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.container{
+    padding:20px;
+}
+
+h1{
+    font-size:34px;
+}
+
+h2{
+    font-size:24px;
+}
+
+p,
+.lista{
+    font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">McQueen</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+<a href="index.html">Inicio</a>
+<a href="productos.html">Repuestos</a>
+<a href="accesorios.html">Accesorios</a>
+<a href="contacto.html">Contacto</a>
+<a href="registrarse.html">Registrarse</a>
+<a href="informacion.html">Información</a>
+</div>
+
+</div>
+
+<div class="container">
+
+<h1>🚗 Multirepuestos McQueen 🚗</h1>
+
+<div class="section">
+<p>
+Multirepuestos McQueen es una tienda especializada en la venta de repuestos automotrices de alta calidad.
+Nos enfocamos en brindar soluciones rápidas y confiables para todo tipo de vehículos, desde automóviles particulares hasta flotas empresariales.
+</p>
+</div>
+
+<div class="section">
+<p>
+Ofrecer repuestos automotrices de excelente calidad a precios competitivos, brindando un servicio rápido, confiable y accesible para todos nuestros clientes.
+</p>
+</div>
+
+<div class="section">
+<p>
+Ser una de las empresas líderes en la venta de repuestos en el mercado digital, destacándonos por nuestra innovación, atención al cliente y variedad de productos.
+</p>
+</div>
+
+<div class="section">
+
+<h2>🔧 Servicios</h2>
+
+<ul class="lista">
+<li>Venta de repuestos originales y genéricos</li>
+<li>Asesoría para selección de piezas</li>
+<li>Atención a talleres mecánicos</li>
+<li>Pedidos en línea y entregas a domicilio</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>💡 ¿Por qué elegirnos?</h2>
+
+<ul class="lista">
+<li>Amplio catálogo de repuestos</li>
+<li>Atención personalizada</li>
+<li>Precios accesibles</li>
+<li>Entrega rápida</li>
+<li>Experiencia en el mercado automotriz</li>
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Multirepuestos McQueen  Calidad y confianza automotriz 🔥
+</footer>
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>

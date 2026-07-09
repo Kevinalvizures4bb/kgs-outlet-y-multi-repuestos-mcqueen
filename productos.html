@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Productos - Multirepuestos McQueen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    overflow-x:hidden;
+}
+
+.navbar{
+    background:rgba(0,0,0,.4);
+    backdrop-filter:blur(10px);
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,.4);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#ffd700;
+    letter-spacing:2px;
+    text-shadow:0 0 10px rgba(255,215,0,.7);
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    position:relative;
+    transition:.3s;
+}
+
+.menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:3px;
+    background:#ffd700;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#ffd700;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:white;
+}
+
+.productos{
+    padding:50px 30px;
+    text-align:center;
+}
+
+.productos h2{
+    font-size:48px;
+    margin-bottom:40px;
+    color:#ffd700;
+    text-shadow:0 0 15px rgba(255,215,0,.5);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.producto{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.producto img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.info{
+    padding:18px;
+}
+
+.producto h3{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.producto p{
+    color:#ffd700;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+button{
+    background:linear-gradient(45deg,#ffcc00,#ff8800);
+    border:none;
+    padding:12px;
+    width:100%;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:linear-gradient(45deg,#ffd700,#ff6600);
+}
+
+footer{
+    background:rgba(0,0,0,.5);
+    text-align:center;
+    padding:20px;
+    color:#ccc;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+.menu{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    text-align:center;
+    margin-top:15px;
+    gap:15px;
+}
+
+.menu.active{
+    display:flex;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.productos{
+    padding:25px 20px;
+}
+
+.productos h2{
+    font-size:34px;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">McQueen</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+<a href="index.html">Inicio</a>
+<a href="productos.html">Repuestos</a>
+<a href="accesorios.html">Accesorios</a>
+<a href="contacto.html">Contacto</a>
+<a href="registrarse.html">Registrarse</a>
+<a href="informacion.html">Información</a>
+</div>
+
+</div>
+
+<div class="productos">
+
+<h2>🚗 Catálogo de Repuestos 🚗</h2>
+
+<div class="grid">
+
+<div class="producto">
+<img src="img/freno de tambor.webp" alt="Frenos">
+<div class="info">
+<h3>Frenos</h3>
+<p>Q350</p>
+<button onclick="comprar('Frenos')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/tren delantero.webp" alt="Tren delantero">
+<div class="info">
+<h3>Tren Delantero</h3>
+<p>Q120</p>
+<button onclick="comprar('Tren Delantero')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/filtro de aire.webp" alt="Filtro de aire">
+<div class="info">
+<h3>Filtro de aire</h3>
+<p>Q80</p>
+<button onclick="comprar('Filtro de aire')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/bujias.webp" alt="Bujías">
+<div class="info">
+<h3>Bujías</h3>
+<p>Q90</p>
+<button onclick="comprar('Bujías')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/radiador.webp" alt="Radiador">
+<div class="info">
+<h3>Radiador</h3>
+<p>Q700</p>
+<button onclick="comprar('Radiador')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/llantas.webp" alt="Llantas">
+<div class="info">
+<h3>Llantas</h3>
+<p>Q500</p>
+<button onclick="comprar('Llantas')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/amortiguadores.webp" alt="Amortiguadores">
+<div class="info">
+<h3>Amortiguadores</h3>
+<p>Q350</p>
+<button onclick="comprar('Amortiguadores')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/clutch.webp" alt="Clutch">
+<div class="info">
+<h3>Clutch</h3>
+<p>Q800</p>
+<button onclick="comprar('Clutch')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/luces.webp" alt="Luces">
+<div class="info">
+<h3>Luces</h3>
+<p>Q150</p>
+<button onclick="comprar('Luces')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/Bomper.webp" alt="Bomper">
+<div class="info">
+<h3>Bomper</h3>
+<p>Q1,250</p>
+<button onclick="comprar('Bomper')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/espejos.webp" alt="Espejos">
+<div class="info">
+<h3>Espejos</h3>
+<p>Q200</p>
+<button onclick="comprar('Espejos')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/asientos.webp" alt="Asientos">
+<div class="info">
+<h3>Asientos</h3>
+<p>Q900</p>
+<button onclick="comprar('Asientos')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/puertas.webp" alt="Puertas">
+<div class="info">
+<h3>Puertas</h3>
+<p>Q1,200</p>
+<button onclick="comprar('Puertas')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/volante.webp" alt="Volante">
+<div class="info">
+<h3>Volante</h3>
+<p>Q300</p>
+<button onclick="comprar('Volante')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/caja de cambios.webp" alt="Caja de cambios">
+<div class="info">
+<h3>Caja de cambios</h3>
+<p>Q1,500</p>
+<button onclick="comprar('Caja de cambios')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/escape.webp" alt="Escape">
+<div class="info">
+<h3>Escape</h3>
+<p>Q400</p>
+<button onclick="comprar('Escape')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/bomba de gasolina.webp" alt="Bomba de gasolina">
+<div class="info">
+<h3>Bomba de gasolina</h3>
+<p>Q350</p>
+<button onclick="comprar('Bomba de gasolina')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/alternador.webp" alt="Alternador">
+<div class="info">
+<h3>Alternador</h3>
+<p>Q600</p>
+<button onclick="comprar('Alternador')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/motor de arranque.webp" alt="Motor de arranque">
+<div class="info">
+<h3>Motor de arranque</h3>
+<p>Q550</p>
+<button onclick="comprar('Motor de arranque')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/correas.webp" alt="Correas">
+<div class="info">
+<h3>Correas</h3>
+<p>Q100</p>
+<button onclick="comprar('Correas')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/suspencion.webp" alt="Suspensión">
+<div class="info">
+<h3>Suspensión</h3>
+<p>Q700</p>
+<button onclick="comprar('Suspensión')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/computadoras.webp" alt="Pantallas">
+<div class="info">
+<h3>Pantallas</h3>
+<p>Q2,000</p>
+<button onclick="comprar('Pantallas')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/vidrios.webp" alt="Vidrios">
+<div class="info">
+<h3>Vidrios</h3>
+<p>Q300</p>
+<button onclick="comprar('Vidrios')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/cerraduras.webp" alt="Cerraduras">
+<div class="info">
+<h3>Cerraduras</h3>
+<p>Q150</p>
+<button onclick="comprar('Cerraduras')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/limpiaparabrisas.webp" alt="Limpiaparabrisas">
+<div class="info">
+<h3>Limpiaparabrisas</h3>
+<p>Q80</p>
+<button onclick="comprar('Limpiaparabrisas')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/capo.webp" alt="Capó">
+<div class="info">
+<h3>Capó</h3>
+<p>Q900</p>
+<button onclick="comprar('Capó')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/estribos.webp" alt="Estribos">
+<div class="info">
+<h3>Estribos</h3>
+<p>Q750</p>
+<button onclick="comprar('Estribos')">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="img/palanca de cambios.webp" alt="Palanca de cambios">
+<div class="info">
+<h3>Palanca de cambios</h3>
+<p>Q50</p>
+<button onclick="comprar('Palanca de cambios')">Comprar</button>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Multirepuestos McQueen Potencia y calidad automotriz 🔥
+</footer>
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+
+function comprar(producto){
+    window.location.href=`registrarse.html?producto=${encodeURIComponent(producto)}`;
+}
+
+</script>
+
+</body>
+</html>

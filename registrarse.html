@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Registro Cliente - McQueen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    min-height:100vh;
+    color:white;
+}
+
+.navbar{
+    background:rgba(0,0,0,.4);
+    backdrop-filter:blur(10px);
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,.4);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#ffd700;
+    letter-spacing:2px;
+    text-shadow:0 0 10px rgba(255,215,0,.7);
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    position:relative;
+    transition:.3s;
+}
+
+.menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:3px;
+    background:#ffd700;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#ffd700;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:white;
+}
+
+.container{
+    max-width:500px;
+    margin:50px auto;
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    animation:fade 1s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.container h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:38px;
+    color:#ffd700;
+    text-shadow:0 0 12px rgba(255,215,0,.5);
+}
+
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:rgba(255,255,255,.12);
+    color:white;
+    font-size:16px;
+    transition:.3s;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#d6d6d6;
+}
+
+input:focus,
+textarea:focus{
+    transform:scale(1.02);
+    background:rgba(255,255,255,.18);
+    box-shadow:0 0 15px rgba(255,215,0,.5);
+}
+
+textarea{
+    min-height:120px;
+    resize:none;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(45deg,#ffcc00,#ff8800);
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.04);
+    background:linear-gradient(45deg,#ffd700,#ff6600);
+    box-shadow:0 0 20px rgba(255,215,0,.6);
+}
+
+footer{
+    background:rgba(0,0,0,.5);
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    color:#ccc;
+}
+
+@media(max-width:768px){
+
+.menu{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    text-align:center;
+    margin-top:15px;
+    gap:15px;
+}
+
+.menu.active{
+    display:flex;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.container{
+    width:90%;
+    padding:25px;
+}
+
+.container h2{
+    font-size:30px;
+}
+
+}
+
+@media(max-width:480px){
+
+.container{
+    padding:20px;
+}
+
+.container h2{
+    font-size:26px;
+}
+
+input,
+textarea,
+button{
+    font-size:15px;
+}
+
+.logo{
+    font-size:22px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">McQueen</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+<a href="index.html">Inicio</a>
+<a href="productos.html">Repuestos</a>
+<a href="accesorios.html">Accesorios</a>
+<a href="contacto.html">Contacto</a>
+<a href="registrarse.html">Registrarse</a>
+<a href="informacion.html">Información</a>
+</div>
+
+</div>
+<div class="container">
+
+<h2>🚗 Registro de Cliente</h2>
+
+<form id="registro">
+
+<input
+type="text"
+id="nombre"
+placeholder="Nombre completo"
+required>
+
+<input
+type="email"
+id="correo"
+placeholder="Correo electrónico"
+required>
+
+<input
+type="tel"
+id="telefono"
+placeholder="Teléfono"
+required>
+
+<input
+type="text"
+id="repuesto"
+placeholder="Repuesto o accesorio que necesita"
+required>
+
+<textarea
+id="direccion"
+placeholder="Dirección de entrega"></textarea>
+
+<button type="submit">
+📲 Enviar Registro por WhatsApp
+</button>
+
+</form>
+
+</div>
+
+<footer>
+© 2026 Multirepuestos McQueen | Servicio rápido y seguro 🚘
+</footer>
+<script>
+
+// Menú para celulares
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+
+// Enviar formulario por WhatsApp
+document.getElementById("registro").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre").value;
+    let correo = document.getElementById("correo").value;
+    let telefono = document.getElementById("telefono").value;
+    let repuesto = document.getElementById("repuesto").value;
+    let direccion = document.getElementById("direccion").value;
+
+    let mensaje =
+`🚗 *NUEVO REGISTRO DE CLIENTE*
+
+👤 Nombre:
+${nombre}
+
+📧 Correo:
+${correo}
+
+📱 Teléfono:
+${telefono}
+
+🔧 Repuesto o accesorio solicitado:
+${repuesto}
+
+📍 Dirección de entrega:
+${direccion}`;
+
+    // ==========================
+    // CAMBIA ESTE NÚMERO POR EL TUYO
+    // ==========================
+    let numero = "50232887329";
+
+    let url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+
+    window.open(url, "_blank");
+
+    // Limpiar formulario
+    document.getElementById("registro").reset();
+
+});
+
+</script>
+
+</body>
+</html>

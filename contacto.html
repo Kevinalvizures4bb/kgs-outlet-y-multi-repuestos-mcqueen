@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto - Multirepuestos McQueen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* LOGO */
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#ffd700;
+    letter-spacing:2px;
+    text-shadow:0 0 10px rgba(255,215,0,0.7);
+}
+
+/* MENU */
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+    position:relative;
+}
+
+.menu a::after{
+    content:"";
+    width:0%;
+    height:3px;
+    background:#ffd700;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:0.3s;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+.menu a:hover{
+    color:#ffd700;
+}
+
+/* MENU HAMBURGUESA */
+
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:white;
+}
+
+/* CONTENIDO */
+
+.contacto{
+    padding:50px 30px;
+    min-height:100vh;
+}
+
+/* TITULO */
+
+.contacto h1{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:45px;
+    color:#ffd700;
+    text-shadow:0 0 15px rgba(255,215,0,0.5);
+}
+
+/* SUCURSALES */
+
+.sucursal{
+    margin-bottom:35px;
+    padding-bottom:20px;
+    transition:0.3s;
+}
+
+.sucursal:hover{
+    transform:translateX(10px);
+}
+
+/* NOMBRE */
+
+.sucursal h3{
+    font-size:25px;
+    margin-bottom:10px;
+    color:white;
+}
+
+/* TELEFONOS */
+
+.telefono{
+    font-size:24px;
+    font-weight:bold;
+    color:#ffd700;
+    margin-bottom:8px;
+}
+
+/* DIRECCION */
+
+.direccion{
+    color:#d6d6d6;
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* FOOTER */
+
+footer{
+    background:rgba(0,0,0,0.5);
+    text-align:center;
+    padding:20px;
+    color:#ccc;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.menu{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    text-align:center;
+    margin-top:15px;
+    gap:15px;
+}
+
+.menu.active{
+    display:flex;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.contacto{
+    padding:25px 20px;
+}
+
+.contacto h1{
+    font-size:32px;
+}
+
+.sucursal h3{
+    font-size:20px;
+}
+
+.telefono{
+    font-size:18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">McQueen</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+<div class="menu" id="menu">
+<a href="index.html">Inicio</a>
+<a href="productos.html">Repuestos</a>
+<a href="accesorios.html">Accesorios</a>
+<a href="contacto.html">Contacto</a>
+<a href="registrarse.html">Registrarse</a>
+<a href="informacion.html">Información</a>
+</div>
+
+</div>
+
+<!-- CONTACTO -->
+
+<div class="contacto">
+
+<h1>📞 Contáctenos</h1>
+
+<div class="sucursal">
+<h3>💬 WhatsApp</h3>
+<p class="telefono">+(502) 5201-4100</p>
+</div>
+
+<div class="sucursal">
+<h3>🏢 Multirepuestos McQueen Central (Con Taller)</h3>
+<p class="telefono">PBX 2423-4790</p>
+<p class="direccion">6a Avenida 3-25, Zona 9, Ciudad</p>
+</div>
+
+<div class="sucursal">
+<h3>🚗 Sucursal Aguilar Batres</h3>
+<p class="telefono">2475-2638 / 2473-6817 / 2473-6625</p>
+<p class="direccion">Calz. Aguilar Batres, Zona 11</p>
+</div>
+
+<div class="sucursal">
+<h3>📍 Sucursal Terminal</h3>
+<p class="telefono">2434-3068 / 2434-1154</p>
+<p class="direccion">2a Avenida 2-40, Zona 9</p>
+</div>
+
+<div class="sucursal">
+<h3>🛠️ Sucursal San Juan</h3>
+<p class="telefono">2435-5828 / 2437-1470</p>
+<p class="direccion">Calzada San Juan 3-54, Zona 3 de Mixco</p>
+</div>
+
+<div class="sucursal">
+<h3>🔥 Sucursal Roosevelt (Con Taller)</h3>
+<p class="telefono">5974-1234</p>
+<p class="direccion">Km 14.5 Calz. Roosevelt, Zona 3 de Mixco</p>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 Multirepuestos McQueen  Atención rápida y segura 🚘
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
