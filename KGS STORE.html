@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KGS STORE | Moda para Toda la Familia</title>
+
+    
+    <link rel="stylesheet" href="estilos.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    
+
+    <header>
+
+        <div class="logo">
+            <h2>KGS STORE</h2>
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#dama">Dama</a></li>
+                <li><a href="#caballero">Caballero</a></li>
+                <li><a href="#ninos">Niños</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="index.html">Ir a Multi Repuestos McQueen</a></li>
+            </ul>
+
+        </nav>
+
+        <div class="carrito-icono" onclick="mostrarCarrito()">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="contador">0</span>
+</div>
+
+    </header>
+
+    
+
+    <section class="banner" id="inicio">
+
+        <div class="banner-texto">
+
+            <h1>Moda para Toda la Familia</h1>
+
+            <p>
+                Descubre las mejores prendas para dama,
+                caballero y niños con la mejor calidad
+                y al mejor precio.
+            </p>
+
+            <a href="#dama" class="btn">Comprar Ahora</a>
+
+        </div>
+
+    </section>
+
+    
+
+    <section class="categorias">
+
+        <h2>Categorías Destacadas</h2>
+
+        <div class="contenedor-categorias">
+
+            <div class="categoria">
+
+                <img src="imagenes/damas.jpg" alt="Ropa para dama">
+
+                <h3>Dama</h3>
+
+            </div>
+
+            <div class="categoria">
+
+                <img src="imagenes/caballeros.jpg" alt="Ropa para caballero">
+
+                <h3>Caballero</h3>
+
+            </div>
+
+            <div class="categoria">
+
+                <img src="imagenes/niños.jpg" alt="Ropa para niños">
+
+                <h3>Niños</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section id="dama">
+
+        <h2 class="titulo">Ropa para Dama</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <img src="imagenes/camisa casual.jpg" alt="">
+                <h3>Blusa Casual</h3>
+                <p>Q180.00</p>
+                <button onclick="agregarCarrito('Blusa Casual',180)">
+Agregar al carrito
+</button>
+            </div>
+
+            <div class="producto">
+                <img src="imagenes/vestido elegante.jpg" alt="">
+                <h3>Vestido Elegante</h3>
+                <p>Q320.00</p>
+                <button onclick="agregarCarrito('Vestido Elegante',320)">
+Agregar al carrito
+</button>
+            </div>
+
+            <div class="producto">
+                <img src="imagenes/jeans.jpg" alt="">
+                <h3>Jeans</h3>
+                <p>Q250.00</p>
+                <button onclick="agregarCarrito('Jeans',250)">
+Agregar al carrito
+</button>
+            </div>
+
+        </div>
+
+    </section>
+
+   
+    <section id="caballero">
+
+        <h2 class="titulo">Ropa para Caballero</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <img src="imagenes/camisa.jpg" alt="">
+                <h3>Camisa Formal</h3>
+                <p>Q260.00</p>
+               <button onclick="agregarCarrito('Camisa Formal',260)">
+Agregar al carrito
+</button>
+            </div>
+
+            <div class="producto">
+                <img src="imagenes/playera.jpg" alt="">
+                <h3>Playera</h3>
+                <p>Q160.00</p>
+                <button onclick="agregarCarrito('Playera',160)">
+Agregar al carrito
+</button>
+            </div>
+
+            <div class="producto">
+                <img src="imagenes/pantalon.jpg" alt="">
+                <h3>Pantalón</h3>
+                <p>Q280.00</p>
+               <button onclick="agregarCarrito('Pantalón',280)">
+Agregar al carrito
+</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section id="ninos">
+
+        <h2 class="titulo">Ropa para Niños</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <img src="imagenes/conjunto infantil.jpg" alt="">
+                <h3>Conjunto Infantil</h3>
+                <p>Q170.00</p>
+                <button onclick="agregarCarrito('Conjunto Infantil',170)">
+Agregar al carrito
+</button>
+            </div>
+
+            <div class="producto">
+                <img src="imagenes/sudadera.jpg" alt="">
+                <h3>Sudadera</h3>
+                <p>Q210.00</p>
+                <button onclick="agregarCarrito('Sudadera',210)">
+Agregar al carrito
+</button>
+            </div>
+
+            <div class="producto">
+                <img src="imagenes/vestido infantil.jpg" alt="">
+                <h3>Vestido Infantil</h3>
+                <p>Q190.00</p>
+                <button onclick="agregarCarrito('Vestido Infantil',190)">
+Agregar al carrito
+</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section id="ofertas">
+
+        <h2 class="titulo">Ofertas Especiales</h2>
+
+        <div class="ofertas">
+
+            <div class="oferta">
+                <h3>30% de descuento</h3>
+                <p>En ropa para dama.</p>
+            </div>
+
+            <div class="oferta">
+                <h3>2x1</h3>
+                <p>En prendas seleccionadas.</p>
+            </div>
+
+            <div class="oferta">
+                <h3>Envío Gratis</h3>
+                <p>Compras mayores a Q600.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section id="nosotros">
+
+        <h2 class="titulo">Sobre Nosotros</h2>
+
+        <p class="texto">
+
+            Bienvenido a KGS Outlet, tu tienda de ropa donde encontrarás estilo, calidad y buenos precios en un solo lugar.
+
+En KGS Outlet nos dedicamos a ofrecer prendas para mujeres, hombres y niños, con una amplia variedad de estilos para cada ocasión. Nuestro objetivo es que cada cliente encuentre ropa cómoda, moderna y accesible, sin dejar de lado la calidad.
+
+Trabajamos para brindar una excelente experiencia de compra, ofreciendo atención personalizada y productos que siguen las tendencias actuales. Creemos que vestir bien debe estar al alcance de todos, por eso seleccionamos cuidadosamente cada una de nuestras prendas.
+
+En KGS Outlet, nos esforzamos por convertirnos en tu primera opción cuando busques renovar tu guardarropa con confianza, estilo y los mejores precios.
+
+KGS Outlet: moda para toda la familia, calidad que inspira y precios que enamoran.
+        </p>
+
+    </section>
+
+    
+
+<section id="contacto">
+
+    <h2 class="titulo">Contáctanos</h2>
+
+    <p class="texto">
+        ¿Tienes alguna consulta o deseas realizar un pedido?
+        Escríbenos directamente por WhatsApp, estaremos encantados de atenderte.
+    </p>
+
+    <a href="https://wa.me/50249123928"
+       class="btn-whatsapp"
+       target="_blank">
+
+        <i class="fab fa-whatsapp"></i>
+        Escríbenos por WhatsApp
+
+    </a>
+
+</section>
+
+   
+<div id="carrito" class="carrito">
+
+    <h2>Mi Carrito</h2>
+
+    <div id="lista-carrito"></div>
+
+    <h3>Total: Q<span id="total">0.00</span></h3>
+
+    <button onclick="enviarWhatsApp()">
+        Enviar Pedido
+    </button>
+
+    <button onclick="vaciarCarrito()" class="vaciar">
+        Vaciar Carrito
+    </button>
+
+</div>
+ 
+
+    <footer>
+
+        <div class="footer-contenido">
+
+            <h2>KGS STORE</h2>
+
+            <p>Moda para toda la familia.</p>
+
+            <div class="redes">
+
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+            </div>
+
+            <p class="copyright">
+              © 2026 KGS STORE | Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+let carrito = [];
+
+
+function agregarCarrito(nombre, precio){
+
+    carrito.push({
+        nombre: nombre,
+        precio: precio
+    });
+
+    actualizarCarrito();
+
+}
+
+
+function actualizarCarrito(){
+
+    let lista = document.getElementById("lista-carrito");
+    let total = 0;
+
+    lista.innerHTML = "";
+
+    carrito.forEach((producto,index)=>{
+
+        lista.innerHTML += `
+        <div class="item-carrito">
+
+            <div>
+                <strong>${producto.nombre}</strong><br>
+                Q${producto.precio.toFixed(2)}
+            </div>
+
+            <button class="btn-eliminar"
+                onclick="eliminarProducto(${index})"
+                title="Eliminar producto">
+                <i class="fas fa-times"></i>
+            </button>
+
+        </div>
+        `;
+
+        total += producto.precio;
+
+    });
+
+    document.getElementById("total").innerHTML = total.toFixed(2);
+    document.getElementById("contador").innerHTML = carrito.length;
+
+}
+
+    
+function eliminarProducto(indice){
+
+    carrito.splice(indice,1);
+
+    actualizarCarrito();
+
+}
+
+function vaciarCarrito(){
+
+    carrito = [];
+
+    actualizarCarrito();
+
+}
+
+function vaciarCarrito(){
+
+    carrito = [];
+
+    actualizarCarrito();
+}
+
+function eliminarProducto(indice){
+
+    carrito.splice(indice, 1);
+
+    actualizarCarrito();
+
+}
+
+function mostrarCarrito(){
+
+    document.getElementById("carrito").classList.toggle("activo");
+
+}
+
+function enviarWhatsApp(){
+
+    if(carrito.length==0){
+
+        alert("El carrito está vacío.");
+        return;
+
+    }
+
+    let mensaje = "🛍️ *Pedido KGS STORE*%0A%0A";
+
+    let total = 0;
+
+    carrito.forEach(producto=>{
+
+        mensaje += "• " + producto.nombre + " - Q" + producto.precio.toFixed(2) + "%0A";
+
+        total += producto.precio;
+
+    });
+
+    mensaje += "%0A💰 *TOTAL:* Q" + total.toFixed(2);
+
+    
+    window.open("https://wa.me/50249123928?text=" + mensaje,"_blank");
+
+}
+
+</script>
